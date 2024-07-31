@@ -1,0 +1,33 @@
+---
+import "../style.css";
+import { ViewTransitions } from "astro:transitions";
+
+export interface Props {
+  title: string;
+}
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Mohammed Amr | {Astro.props.title}</title>
+    <ViewTransitions />
+    <style>
+      body {
+        background: url("/bg.svg");
+      }
+      @media screen and (prefers-color-scheme: dark) {
+        body {
+          background: url("/bg-dark.svg");
+          color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

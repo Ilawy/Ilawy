@@ -1,0 +1,38 @@
+---
+import AboutLayout from "../components/aboutLayout.astro";
+import { createPB, PROJECTS_COLLECTION } from "../lib/pb";
+const pb = createPB();
+
+const data = await pb.collection(PROJECTS_COLLECTION).getFullList();
+---
+
+<AboutLayout>
+  <div class="p-4 w-full h-full md:flex-1 lg:my-auto">
+    <h1 class="text-4xl font-bold text-gray-600 dark:text-gray-300">
+      Projects
+    </h1>
+    <div
+      class="my-3 flex flex-col gap-3 overflow-y-scroll max-h-[32ch] md:max-h-[64ch] scrollbar"
+    >
+      {
+        data.map((item) => (
+          <div class="border bg-stone-100 dark:bg-[#535C91] p-3 flex flex-col gap-3 rounded-md">
+            <div class="flex items-center justify-between">
+              <h2 class="text-2xl font-bold text-gray-600 dark:text-gray-300">
+                {item.title}
+              </h2>
+              <span class="text-lg text-gray-600 dark:text-gray-300">
+                {item.year}
+              </span>
+            </div>
+            <p
+              class="max-w-[32ch]"
+              style="text-wrap: balance;"
+              set:html={item.body}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</AboutLayout>
