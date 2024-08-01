@@ -1,3 +1,4 @@
+@import url("./style/normalize.css");
 @keyframes blur-fadein {
   from {
     filter: blur(10px);

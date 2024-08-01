@@ -1,0 +1,74 @@
+@import "./main.scss";
+.main {
+  width: 100%;
+  height: 100svh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.inner {
+  // col-span-full flex flex-col items-center justify-around p-5
+  grid-column: span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  //   padding: 5rem;
+}
+
+.sideA {
+  // flex flex-col gap-3
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-0);
+
+  .text1 {
+    // text-2xl font-bold text-gray-600 dark:text-gray-300 classic-fadein
+    font-size: var(--font-size-4);
+    color: var(--gray-6);
+    font-weight: var(--font-weight-9);
+    @include dark {
+      color: var(--gray-1);
+    }
+  }
+
+  .text2 {
+    //text-5xl xs uppercase font-bold
+    font-size: var(--font-size-8);
+    text-transform: uppercase;
+    font-weight: var(--font-weight-9);
+  }
+}
+
+.sideB {
+  // w-full p-3 flex items-center gap-16 flex-wrap justify-center
+  width: 100%;
+  padding: var(--size-1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-8);
+  .expandable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--size-3);
+    @include sm {
+      //   display: none;
+    }
+  }
+
+  .item {
+    // text-lg font-bold text-gray-700 dark:text-gray-300
+    font-size: var(--font-size-1);
+    font-weight: var(--font-weight-9);
+    color: var(--gray-7);
+    &:is(a) {
+      text-decoration: underline;
+    }
+    @include dark {
+      color: var(--gray-1);
+    }
+  }
+}

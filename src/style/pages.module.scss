@@ -1,0 +1,132 @@
+@import "./main.scss";
+.about {
+  // flex items-center justify-center flex-1
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  .paragraph {
+    // max-w-[23ch] text-4xl leading-tight font-bold text-gray-600 dark:text-gray-300
+    max-width: 23ch;
+    font-size: var(--font-size-5);
+    line-height: var(--line-height-1);
+    font-weight: var(--font-weight-9);
+    color: var(--gray-8);
+    text-wrap: balance;
+    animation: classic-fadein 1s ease-in-out forwards,
+      blur-fadein 1s ease-in-out forwards;
+    @include dark {
+      color: var(--gray-1);
+    }
+  }
+}
+
+.projects {
+  //p-4 w-full h-full md:flex-1 lg:my-auto
+  width: 100%;
+  height: 100%;
+  padding: var(--size-3);
+  flex: 1;
+  @include lg {
+    margin: auto 0;
+  }
+
+  & > .title {
+    // text-4xl font-bold text-gray-600 dark:text-gray-300
+    font-weight: var(--font-weight-9);
+    color: var(--gray-8);
+    @include dark {
+      color: var(--gray-1);
+    }
+  }
+
+  .container {
+    // my-3 flex flex-col gap-3 overflow-y-scroll max-h-[32ch] md:max-h-[64ch] scrollbar
+    margin-top: var(--size-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+    overflow-y: scroll;
+    max-height: 32ch;
+    @include md {
+      max-height: 64ch;
+    }
+    .item {
+      // border bg-stone-100 dark:bg-[#535C91] p-3 flex flex-col gap-3 rounded-md
+      border-radius: var(--radius-3);
+      box-shadow: var(--shadow-2);
+      border: 1px solid var(--surface-4);
+      background-color: var(--surface-2);
+      padding: var(--size-3);
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-3);
+      .rowA {
+        // flex items-center justify-between
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .title {
+        // text-3xl font-bold text-gray-600 dark:text-gray-300
+        font-weight: var(--font-weight-9);
+        color: var(--gray-8);
+        @include dark {
+          color: var(--gray-1);
+          border-color: var(--surface-4);
+        }
+      }
+    }
+  }
+}
+
+.social {
+  // p-4 w-full h-full md:flex-1 lg:my-auto
+  width: 100%;
+  height: 100%;
+  padding: var(--size-3);
+  flex: 1;
+  @include lg {
+    margin: auto 0;
+  }
+  & > .title {
+    // text-4xl font-bold text-gray-600 dark:text-gray-300
+    font-weight: var(--font-weight-9);
+    color: var(--gray-8);
+    @include dark {
+      color: var(--gray-1);
+    }
+  }
+
+  .container {
+    // my-3 flex flex-col gap-3 max-h-[32ch] md:max-h-[64ch] scrollbar
+    margin-top: var(--size-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--size-3);
+    max-height: 32ch;
+    @include md {
+      max-height: 64ch;
+    }
+    .item {
+      // border bg-stone-100 dark:bg-[#535C91] p-3 flex flex-col gap-3 rounded-md
+      border-radius: var(--radius-3);
+      box-shadow: var(--shadow-2);
+      border: 1px solid var(--surface-4);
+      background-color: var(--surface-2);
+      padding: var(--size-3);
+      display: flex;
+      flex-direction: column;
+      gap: var(--size-3);
+      display: flex;
+      .inner {
+        // flex items-center justify-between
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: currentColor;
+      }
+    }
+  }
+}

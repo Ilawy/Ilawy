@@ -1,36 +1,32 @@
 ---
 import MainLayout from "../components/mainLayout.astro";
 import { css } from "../lib/css";
+import styles from "../style/index.module.scss";
 ---
 
 <MainLayout title="Home">
-  <main class="w-full h-[100svh] grid grid-cols-3">
-    <div class="col-span-full flex flex-col items-center justify-around p-5">
-      <div class="flex flex-col gap-3">
-        <h2
-          class="text-2xl font-bold text-gray-600 dark:text-gray-300 classic-fadein"
-          style="--del: 100ms;"
-        >
-          Hi It's,
-        </h2>
+  <main class={styles.main}>
+    <div class={styles.inner}>
+      <div class={styles.sideA}>
+        <h2 class={styles.text1} style="--del: 100ms;">Hi It's,</h2>
         <h1
-          class={`text-6xl uppercase font-bold`}
+          class={styles.text2}
           style="animation: classic-fadein 1s ease-in-out forwards, blur-fadein 1s ease-in-out forwards;"
         >
           Mohammed <br /> Amr
         </h1>
       </div>
-      <div class="w-full p-3 flex items-center gap-16 flex-wrap justify-center">
-        <span class="text-lg font-bold text-gray-700 dark:text-gray-300">
-          SOFTWARE DEVELOPER & DESIGNER
-        </span>
-        <a
-          class="text-lg font-bold underline"
-          style="view-transition-name: bio-title;"
-          href="/about">ABOUT</a
-        >
-        <a class="text-lg font-bold underline" href="/projects">PROJECTS</a>
-        <a class="text-lg font-bold underline" href="/social">SOCIAL</a>
+      <div class={styles.sideB}>
+        <span class={styles.item}> SOFTWARE DEVELOPER & DESIGNER </span>
+        <div class={styles.expandable}>
+          <a
+            class={styles.item}
+            style="view-transition-name: bio-title;"
+            href="/about">ABOUT</a
+          >
+          <a class={styles.item} href="/projects">PROJECTS</a>
+          <a class={styles.item} href="/social">SOCIAL</a>
+        </div>
 
         <!-- <span></span> -->
       </div>

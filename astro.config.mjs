@@ -1,8 +1,15 @@
-import { defineConfig } from 'astro/config';
-
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from "astro/config";
+import postcssJIT from "postcss-jit-props";
+import OP from "open-props";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind()]
+  integrations: [],
+  vite: {
+    css: {
+      postcss: {
+        plugins: [postcssJIT(OP)],
+      },
+    },
+  },
 });
